@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Canva Code Challenge - Part 1</title>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h1>Part 1</h1>
+    <p>Batching asynchronous requests</p>
+    <ul>
+      <li>
+        <a href="/../..">🔙</a>
+      </li>
+    </ul>
+
+    <h2>
+      Problem
+      <small
+        ><mark><em>paraphrased</em></mark></small
+      >
+    </h2>
+
+    <pre>
+      <code class='javascript'>
+/**
+ * Fetch data at the given URL. Returns a promise that resolves with the data.
+ * Simulates random network latency up to 4 seconds.
+ */
+
+function fetch(url) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(`dummy data for ${url}`), Math.random() * 4000)
+  })
+}
+
+/**
+ * Problem: Fetch 10 designs with the urls `design/1` through to `design/10` log `done` to the console when all are complete
+ */
+      </pre>
+    </code>
+
+    
+
+    <details>
+      <summary>
+        <h2 style="display: inline">Solution</h2>
+      </summary>
+      <pre>
+        <code class='javascript'>
+const fetchTenDesigns = () => {
+const designs = [...Array(10).keys()]
+const urls = designs.map((design) => `design/${design + 1}`)
+
+Promise.all(urls.map((url) => fetch(url))).then(() => console.log('done'))
+}
+        </code>
+      </pre>
+    </details>
+
+    <button onclick='fetchTenDesigns()'>Fetch 10 designs</button>
+
+    <h2>Redirected Console Output</h2>
+
+    <pre>
+      <code class='javascript'>
+        <div id="output"></div>
+      </code>
+    </pre>
+
+    <script>
+      window.hljs.initHighlightingOnLoad()
+    </script>
+  </body>
+</html>
