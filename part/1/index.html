@@ -54,10 +54,10 @@ function fetch(url) {
       <pre>
         <code class='javascript'>
 const fetchTenDesigns = () => {
-const designs = [...Array(10).keys()]
-const urls = designs.map((design) => `design/${design + 1}`)
+  const designs = [...Array(10).keys()]
+  const urls = designs.map((design) => `design/${design + 1}`)
 
-Promise.all(urls.map((url) => fetch(url))).then(() => console.log('done'))
+  Promise.all(urls.map((url) => fetch(url))).then(() => console.log('done'))
 }
         </code>
       </pre>
