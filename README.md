@@ -1,2 +1,2 @@
 # canva-code-challenge
-toy problems for live coding phone screen
+toy problems for a live coding phone screen
