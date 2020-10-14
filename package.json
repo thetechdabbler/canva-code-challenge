@@ -1,7 +1,7 @@
 {
   "name": "canva-code-challenge",
   "version": "0.0.1",
-  "description": "toy problems for front end live coding phone screen",
+  "description": "toy problems for a front end live coding phone screen",
   "keywords": [],
   "main": "/index.html",
   "dependencies": {}
